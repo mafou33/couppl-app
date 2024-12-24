@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق للأزواج</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            text-align: center;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 20px;
+        }
+        h1 {
+            color: #d83b6e;
+        }
+        button {
+            background-color: #d83b6e;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #b0305a;
+        }
+        .section {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>دليل الأزواج</h1>
+    <div class="section">
+        <h2>نصيحة اليوم</h2>
+        <p id="advice">اضغط على الزر للحصول على نصيحة</p>
+        <button onclick="showAdvice()">احصل على نصيحة</button>
+    </div>
+    <div class="section">
+        <h2>فكرة نشاط</h2>
+        <p id="activity">اضغط على الزر للحصول على فكرة</p>
+        <button onclick="showActivity()">احصل على نشاط</button>
+    </div>
+
+    <script>
+        const adviceList = [
+            "التواصل هو المفتاح لعلاقة ناجحة. تحدث مع شريكك بصراحة وشفافية.",
+            "خذ وقتًا للاستماع إلى شريكك دون مقاطعة.",
+            "قم بمفاجأة شريكك بهدية بسيطة تعبر عن تقديرك.",
+            "اقضِ وقتًا ممتعًا مع شريكك بعيدًا عن الهواتف والأجهزة.",
+            "تذكر أن التعبير عن الامتنان يعزز العلاقة بشكل كبير."
+        ];
+
+        const activityList = [
+            "جربوا الطبخ معًا وتحضير وجبة مميزة.",
+            "اختاروا فيلمًا لمشاهدته معًا في ليلة هادئة.",
+            "خذوا نزهة قصيرة في الهواء الطلق وتحدثوا عن أحلامكم.",
+            "قوموا بتحدي لعبة ممتعة تعزز روح التعاون بينكما.",
+            "خططوا لليلة رومانسية مع إضاءة خافتة وموسيقى هادئة."
+        ];
+
+        function showAdvice() {
+            const randomAdvice = adviceList[Math.floor(Math.random() * adviceList.length)];
+            document.getElementById('advice').textContent = randomAdvice;
+        }
+
+        function showActivity() {
+            const randomActivity = activityList[Math.floor(Math.random() * activityList.length)];
+            document.getElementById('activity').textContent = randomActivity;
+        }
+    </script>
+</body>
+</html>
